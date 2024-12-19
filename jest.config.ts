@@ -11,5 +11,15 @@ const config: Config = {
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
 };
 
+// module.exports = {
+//   collectCoverage: true,
+//   collectCoverageFrom: [
+//     "**/*.{ts,tsx}",
+//     "!**/*.d.ts",
+//     "!**/node_modules/**",
+//   ],
+//   coverageDirectory: "coverage"
+// }
+
 export default createJestConfig(config);
 
