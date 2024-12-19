@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Hero from '@/components/home/hero'
 
 export default function Home() {
   return (
@@ -7,7 +8,8 @@ export default function Home() {
         Welcome to RiftHomes
       </h1>
       <div className="mt-8">
-        {/* Search component will go here */}
+        <Hero />
+        {/* Other sections will go here */}
       </div>
     </div>
   )
