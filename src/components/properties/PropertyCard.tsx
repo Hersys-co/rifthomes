@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaBed, FaBath, FaRuler } from 'react-icons/fa';
@@ -17,6 +17,7 @@ interface PropertyCardProps {
 }
 
 export default function PropertyCard({
+    id,
     title,
     location,
     price,
@@ -51,7 +52,7 @@ export default function PropertyCard({
                 
                 <div className="flex justify-between items-center mb-4">
                     <p className="text-2xl font-bold text-yellow-500">
-                        KES {price.toLocaleString()}
+                        KES {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     </p>
                     <div className="flex gap-4 text-gray-600">
                         <div className="flex items-center gap-1">
@@ -68,14 +69,15 @@ export default function PropertyCard({
                         </div>
                     </div>
                 </div>
-
-                <motion.button 
-                    className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold py-2 rounded-md hover:shadow-md transition-shadow"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                >
-                    View Details
-                </motion.button>
+                <Link href={`/properties/${id}`}>
+                    <motion.button 
+                        className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold py-2 rounded-md hover:shadow-md transition-shadow"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        View Details
+                    </motion.button>
+                </Link>
             </div>
         </motion.div>
     );
