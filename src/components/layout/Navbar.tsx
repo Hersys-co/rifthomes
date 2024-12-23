@@ -21,7 +21,7 @@ export default function Navbar() {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-6 z-50">
             {/* Dropdown for Buy Category */}
             <div className="relative group">
                 <button className="px-4 py-2 hover:text-yellow-400 transition-colors">
