@@ -203,9 +203,6 @@ export default function About() {
                             <div key={index} className="w-full flex-shrink-0 p-4">
                                 <div className="bg-white p-8 rounded-xl shadow-lg">
                                     <FaUserCircle className="w-20 h-20 text-yellow-400 mx-auto mb-4" />
-                                    <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full mb-4">
-                                        {testimonial.category}
-                                    </span>
                                     <p className="text-gray-600 italic mb-4">{testimonial.quote}</p>
                                     <h4 className="font-bold">{testimonial.name}</h4>
                                     <p className="text-sm text-gray-500 mb-2">{testimonial.role}</p>
@@ -235,9 +232,6 @@ export default function About() {
                 {testimonials.map((testimonial, index) => (
                     <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
                         <FaUserCircle className="w-20 h-20 text-yellow-400 mx-auto mb-4" />
-                        <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full mb-4">
-                            {testimonial.category}
-                        </span>
                         <p className="text-gray-600 italic mb-4">{testimonial.quote}</p>
                         <h4 className="font-bold">{testimonial.name}</h4>
                         <p className="text-sm text-gray-500 mb-2">{testimonial.role}</p>
@@ -246,5 +240,4 @@ export default function About() {
                 ))}
             </div>
         </div>    
-    );
-}
+    );}
