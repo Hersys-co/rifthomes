@@ -5,7 +5,11 @@ import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 
 // Dynamic import to avoid SSR issues
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+const ReactQuill = dynamic(() => import('react-quill').then(mod => {
+    // Ensure window is available before returning the component
+    if (typeof window !== 'undefined') return mod;
+    return () => null;
+}), { ssr: false });
 
 type PropertyCategory = 'RENTAL' | 'SALE' | 'AIRBNB';
 type PropertyType = 'APARTMENT' | 'HOUSE' | 'COMMERCIAL' | 'LAND';
