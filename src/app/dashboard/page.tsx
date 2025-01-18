@@ -37,7 +37,8 @@ export default function Dashboard() {
                         total={85}
                         breakdown={{
                             'Apartments': 45,
-                            'Houses': 40
+                            'Houses': 40,
+                            'Commercial': 15
                         }}
                     />
                     <CategoryStats 
@@ -47,6 +48,7 @@ export default function Dashboard() {
                         breakdown={{
                             'Apartments': 20,
                             'Houses': 26,
+                            'Commercial': 12,
                             'Land': 10
                         }}
                     />

@@ -19,7 +19,8 @@ export default function Properties() {
     const getPropertyTypes = (category: PropertyCategory) => {
         const types = [
             { id: 'APARTMENT', label: 'Apartments' },
-            { id: 'HOUSE', label: 'Houses' }
+            { id: 'HOUSE', label: 'Houses' },
+            { id: 'COMMERCIAL', label: 'Commercial' }
         ];
         
         if (category === 'SALE') {
