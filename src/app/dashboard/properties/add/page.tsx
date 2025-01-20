@@ -1,28 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { FaHome, FaMapMarkerAlt, FaDollarSign, FaBed, FaBath, FaRuler, FaImage } from 'react-icons/fa';
-import dynamic from 'next/dynamic';
-import 'react-quill/dist/quill.snow.css';
-
-// Dynamic import to avoid SSR issues
-const ReactQuill = dynamic(() => import('react-quill').then(mod => {
-    // Ensure window is available before returning the component
-    if (typeof window !== 'undefined') return mod;
-    return () => null;
-}), { ssr: false });
 
 type PropertyCategory = 'RENTAL' | 'SALE' | 'AIRBNB';
 type PropertyType = 'APARTMENT' | 'HOUSE' | 'COMMERCIAL' | 'LAND';
-
-const modules = {
-    toolbar: [
-        [{ 'header': [1, 2, 3, false] }],
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        ['link'],
-        ['clean']
-    ]
-};
 
 export default function AddProperty() {
     const [category, setCategory] = useState<PropertyCategory>('RENTAL');
@@ -116,12 +97,11 @@ export default function AddProperty() {
 
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium mb-2">Description</label>
-                            <ReactQuill 
-                                theme="snow"
+                            <textarea
+                                className="w-full px-4 py-2 border rounded-lg h-48"
                                 value={formData.description}
-                                onChange={(value) => setFormData({...formData, description: value})}
-                                modules={modules}
-                                className="bg-white"
+                                onChange={(e) => setFormData({...formData, description: e.target.value})}
+                                placeholder="Enter property description"
                             />
                         </div>
                     </div>
